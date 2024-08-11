@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Domain Expansion LTD - Crafting Your Dream Home</title>
+    <meta name="description" content="Domain Expansion LTD specializes in innovative residential architectural solutions. Creating personalized, sustainable, and beautiful living spaces.">
+    <meta name="keywords" content="architecture, residential design, sustainable, custom homes, renovations">
+    <meta name="author" content="Domain Expansion LTD">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_TRACKING_ID"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'GA_TRACKING_ID');
+    </script>
+    <script src="https://browser.sentry-cdn.com/6.3.6/bundle.min.js" integrity="sha384-LsKZ6F4h9E5Rm0J4k5hF6CVNUa4VoTx2FzM9UQ4kh0X5uTJ7fAVQZZYOulSksPRt" crossorigin="anonymous"></script>
+    <script>
+      Sentry.init({ dsn: 'https://examplePublicKey@o0.ingest.sentry.io/0' });
+    </script>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header>
+        <div class="logo">Domain Expansion LTD</div>
+        <button class="mobile-menu-btn" aria-label="Open menu">☰</button>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="fees.html">Fees</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="blog.html">Blog</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero" id="main-content">
+        <div class="expanding-room">
+            <img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MXwyMDg2NjZ8MHwxfGFsbHwxfHx8fHx8fHwxNjI5NDUzOTMz&ixlib=rb-1.2.1&q=80&w=1080" alt="Expanding Room" loading="lazy">
+        </div>
+        <div class="hero-overlay">
+            <h1>Domain Expansion LTD</h1>
+            <p>Innovative Residential Architectural Solutions</p>
+            <div>
+                <a href="services.html" class="btn">Our Services</a>
+                <a href="contact.html" class="btn">Get in Touch</a>
+            </div>
+        </div>
+    </section>
+
+    <main>
+        <section id="services" class="intro">
+            <h2>Our Services</h2>
+            <p>We provide a wide range of architectural services to meet your residential needs, including custom home designs, renovations, and sustainable building solutions.</p>
+        </section>
+
+        <section class="service-selector">
+            <h2>Find the Right Service for You</h2>
+            <form id="service-form">
+                <label for="service-type">Choose a service:</label>
+                <select id="service-type" name="service-type">
+                    <option value="custom-home-design">Custom Home Design</option>
+                    <option value="renovations">Renovations</option>
+                    <option value="sustainable-architecture">Sustainable Architecture</option>
+                    <option value="interior-design">Interior Design</option>
+                </select>
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+
+        <section class="testimonials">
+            <h2>What Our Clients Say</h2>
+            <blockquote>
+                <p>"Domain Expansion LTD transformed our home beyond our expectations!"</p>
+                <cite>- John Doe</cite>
+            </blockquote>
+        </section>
+
+        <section class="blog">
+            <h2>Our Blog</h2>
+            <article>
+                <h3>Latest Trends in Home Design</h3>
+                <p>Excerpt of the blog post...</p>
+                <a href="blog.html">Read More</a>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <div class="social-links">
+            <a href="#" aria-label="Facebook">📘</a>
+            <a href="#" aria-label="Twitter">🐦</a>
+            <a href="#" aria-label="Instagram">📷</a>
+            <a href="#" aria-label="LinkedIn">💼</a>
+        </div>
+        <p>&copy; 2024 Domain Expansion LTD. All rights reserved.</p>
+    </footer>
+
+    <button id="back-to-top" aria-label="Back to top">Top</button>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyClOyfnmERNmny-NRzPRsIN3EoKZ0TLzTU",
+    authDomain: "domain-ddb5d.firebaseapp.com",
+    projectId: "domain-ddb5d",
+    storageBucket: "domain-ddb5d.appspot.com",
+    messagingSenderId: "479688503973",
+    appId: "1:479688503973:web:40d2aafe5c148bf1ded34c",
+    measurementId: "G-SZ3EYRKNFQ"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+</script>
