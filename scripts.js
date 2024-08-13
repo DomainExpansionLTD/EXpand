@@ -41,3 +41,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
     sections.forEach(section => observer.observe(section));
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+    const carousel = document.querySelector('.portfolio-carousel');
+    let isScrolling;
+
+    carousel.addEventListener('scroll', () => {
+        window.clearTimeout(isScrolling);
+        isScrolling = setTimeout(() => {
+            carousel.scrollBy({
+                top: 0,
+                left: carousel.clientWidth,
+                behavior: 'smooth'
+            });
+        }, 3000);
+    });
+
+    // Trigger auto-scroll initially
+    isScrolling = setTimeout(() => {
+        carousel.scrollBy({
+            top: 0,
+            left: carousel.clientWidth,
+            behavior: 'smooth'
+        });
+    }, 3000);
+});
