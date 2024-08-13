@@ -1,14 +1,17 @@
-document.addEventListener('DOMContentLoaded', function() {
-    // Mobile menu toggle
+document.addEventListener('DOMContentLoaded', () => {
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
     const nav = document.querySelector('nav ul');
+    const backToTopBtn = document.getElementById('back-to-top');
+    const sections = document.querySelectorAll('section');
+
+    // Mobile menu toggle
     mobileMenuBtn.addEventListener('click', () => {
         nav.classList.toggle('show');
     });
 
     // Smooth scrolling for navigation links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
+        anchor.addEventListener('click', function (e) {
             e.preventDefault();
             nav.classList.remove('show');
             document.querySelector(this.getAttribute('href')).scrollIntoView({
@@ -18,35 +21,23 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Back to top button
-    const backToTopBtn = document.getElementById('back-to-top');
     window.addEventListener('scroll', () => {
-        if (window.scrollY > 200) {
-            backToTopBtn.style.display = 'block';
-        } else {
-            backToTopBtn.style.display = 'none';
-        }
+        backToTopBtn.style.display = window.scrollY > 200 ? 'block' : 'none';
     });
+
     backToTopBtn.addEventListener('click', () => {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 
     // Scroll animation for sections
-    const sections = document.querySelectorAll('section');
-    const observerOptions = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.1
-    };
-    const observer = new IntersectionObserver((entries, observer) => {
+    const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
                 observer.unobserve(entry.target);
             }
         });
-    }, observerOptions);
+    }, { threshold: 0.1 });
+
     sections.forEach(section => observer.observe(section));
 });

@@ -7,6 +7,11 @@
     --expansion-color: rgba(34, 34, 34, 0.9);
     --expansion-glow: rgba(26, 80, 50, 0.7);
 }
+
+* {
+    box-sizing: border-box;
+}
+
 body {
     font-family: 'Roboto', sans-serif;
     line-height: 1.6;
@@ -16,18 +21,7 @@ body {
     background-color: var(--background-color);
     scroll-behavior: smooth;
 }
-.skip-link {
-    position: absolute;
-    top: -40px;
-    left: 0;
-    background: #000;
-    color: #fff;
-    padding: 8px;
-    z-index: 100;
-}
-.skip-link:focus {
-    top: 0;
-}
+
 header {
     background-color: white;
     padding: 1rem;
@@ -39,73 +33,62 @@ header {
     top: 0;
     z-index: 1000;
 }
+
 .logo {
     font-size: 1.5rem;
     font-weight: bold;
     color: var(--primary-color);
 }
-nav {
-    flex-grow: 1;
-    display: flex;
-    justify-content: flex-end;
-}
+
 nav ul {
-    list-style-type: none;
+    list-style: none;
     display: flex;
-    justify-content: flex-end;
     margin: 0;
     padding: 0;
-    flex-grow: 1;
 }
+
 nav ul li {
     margin-left: 20px;
 }
+
 nav ul li a {
     color: var(--primary-color);
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s ease;
 }
+
 nav ul li a:hover {
     color: var(--secondary-color);
 }
+
 .hero {
     position: relative;
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
 }
+
 .expanding-room {
     position: absolute;
     width: 100%;
     height: 100%;
     overflow: hidden;
 }
+
 .expanding-room img {
     width: 100%;
     height: auto;
     animation: expandRoom 15s infinite;
 }
+
 @keyframes expandRoom {
-    0% {
-        transform: scale(1);
-    }
-    25% {
-        transform: scale(1.05);
-    }
-    50% {
-        transform: scale(1.1);
-    }
-    75% {
-        transform: scale(1.05);
-    }
-    100% {
-        transform: scale(1);
-    }
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
 }
+
 .hero-overlay {
     position: absolute;
     top: 0;
@@ -121,18 +104,22 @@ nav ul li a:hover {
     text-align: center;
     animation: fadeIn 5s ease-out;
 }
+
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
 }
+
 .hero-overlay h1 {
     font-size: 3rem;
     margin-bottom: 1rem;
 }
+
 .hero-overlay p {
     font-size: 1.5rem;
     margin-bottom: 2rem;
 }
+
 .btn {
     display: inline-block;
     padding: 0.8rem 1.5rem;
@@ -143,39 +130,32 @@ nav ul li a:hover {
     margin-right: 1rem;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
+
 .btn:hover {
     background-color: var(--primary-color);
     color: white;
 }
+
 main {
     max-width: 1200px;
     margin: 0 auto;
     padding: 2rem;
     padding-top: 6rem;
 }
+
 section {
     margin-bottom: 4rem;
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.5s ease, transform 0.5s ease;
 }
+
 section.visible {
     opacity: 1;
     transform: translateY(0);
 }
-.intro, .services, .portfolio, .contact {
-    text-align: center;
-}
-h2 {
-    color: var(--primary-color);
-    font-size: 2rem;
-    margin-bottom: 1rem;
-}
-.stars {
-    font-size: 1.5rem;
-    color: var(--secondary-color);
-}
-.services-grid {
+
+.services-grid, .portfolio-grid {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -183,7 +163,8 @@ h2 {
     margin-top: 2rem;
     padding: 0 1rem;
 }
-.service-item {
+
+.service-item, .portfolio-item {
     background-color: white;
     padding: 1.5rem;
     border-radius: 8px;
@@ -192,25 +173,11 @@ h2 {
     max-width: 300px;
     transition: transform 0.3s ease;
 }
-.service-item:hover {
+
+.service-item:hover, .portfolio-item:hover {
     transform: translateY(-5px);
 }
-.portfolio-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
-}
-.portfolio-item {
-    background-color: white;
-    padding: 1.5rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
-}
-.portfolio-item:hover {
-    transform: translateY(-5px);
-}
+
 .portfolio-item img {
     width: 100%;
     height: 200px;
@@ -218,6 +185,7 @@ h2 {
     border-radius: 8px;
     margin-bottom: 1rem;
 }
+
 .contact form {
     display: flex;
     flex-direction: column;
@@ -226,12 +194,14 @@ h2 {
     max-width: 500px;
     margin: 0 auto;
 }
+
 .contact input, .contact textarea {
     width: 100%;
     padding: 0.5rem;
     border: 1px solid #ccc;
     border-radius: 4px;
 }
+
 .contact button {
     background-color: var(--primary-color);
     color: white;
@@ -241,9 +211,11 @@ h2 {
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
+
 .contact button:hover {
     background-color: var(--secondary-color);
 }
+
 .mobile-menu-btn {
     display: none;
     background: none;
@@ -252,6 +224,7 @@ h2 {
     color: var(--primary-color);
     cursor: pointer;
 }
+
 footer {
     background-color: var(--primary-color);
     color: white;
@@ -259,15 +232,35 @@ footer {
     padding: 2rem 0;
     margin-top: 4rem;
 }
+
 .social-links {
     margin-bottom: 1rem;
 }
+
 .social-links a {
     color: white;
     font-size: 1.5rem;
     margin: 0 10px;
     text-decoration: none;
 }
+
+#back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: none; /* Hidden by default */
+}
+
+#back-to-top:hover {
+    background-color: var(--secondary-color);
+}
+
 @media (max-width: 768px) {
     .mobile-menu-btn {
         display: block;
@@ -291,19 +284,4 @@ footer {
     .hero-overlay {
         width: 100%;
     }
-}
-#back-to-top {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: var(--primary-color);
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-    display: none; /* Hidden by default */
-}
-#back-to-top:hover {
-    background-color: var(--secondary-color);
 }

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Our Services - Domain Expansion LTD</title>
-    <meta name="description" content="Discover the range of architectural services offered by Domain Expansion LTD, including extension plans, new build projects, planning work applications, and construction drawings.">
+    <meta name="description" content="Explore the range of architectural services offered by Domain Expansion LTD. From extension plans to new build projects, we deliver quality craftsmanship.">
     <meta name="keywords" content="architecture, residential design, services, extension plans, new builds, planning applications, construction drawings">
     <meta name="author" content="Domain Expansion LTD">
     <link rel="stylesheet" href="styles.css">
@@ -12,9 +12,9 @@
 <body>
     <header>
         <div class="logo">Domain Expansion LTD</div>
-        <button class="mobile-menu-btn">☰</button>
+        <button class="mobile-menu-btn" aria-label="Open menu">☰</button>
         <nav>
-            <ul>
+            <ul id="main-nav">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="services.html">Services</a></li>
@@ -30,46 +30,49 @@
             <h2>Our Services</h2>
             <p>At Domain Expansion LTD, we specialize in providing a comprehensive range of architectural services to meet your residential needs. Our expertise includes:</p>
             <div class="services-grid">
-                <div class="service-item">
+                <article class="service-item">
                     <h3>Extension Plans</h3>
                     <p>Transform your existing home with our expertly crafted extension plans. We design seamless additions that enhance the functionality and aesthetic appeal of your property.</p>
-                </div>
-                <div class="service-item">
+                </article>
+                <article class="service-item">
                     <h3>New Build Projects</h3>
                     <p>Our new build projects are designed from the ground up to meet your exact specifications. We manage every aspect of the project, ensuring high standards of quality and craftsmanship.</p>
-                </div>
-                <div class="service-item">
+                </article>
+                <article class="service-item">
                     <h3>Planning Work Applications</h3>
                     <p>Navigate the complexities of planning applications with ease. Our team prepares detailed planning work applications to help you secure the necessary approvals for your project.</p>
-                </div>
-                <div class="service-item">
+                </article>
+                <article class="service-item">
                     <h3>Construction Drawings (Building Regs)</h3>
                     <p>Our construction drawings adhere to building regulations, providing precise and detailed plans to ensure compliance and smooth execution of your construction project.</p>
-                </div>
+                </article>
             </div>
-            <h2>Our Process</h2>
-            <div class="process-steps">
-                <div class="process-step">
-                    <h3>1. Initial Consultation</h3>
-                    <p>The free initial consultation is an informal discussion with you, the homeowner, looking to undertake the project. This can be a daunting process so communication is key. During the initial consultation we will discuss what you would like to achieve from the proposed development and the feasibility of the project. We can talk through various design approaches and suggest the best solutions moving forward.</p>
+
+            <section class="process">
+                <h2>Our Process</h2>
+                <div class="process-steps">
+                    <article class="process-step">
+                        <h3>1. Initial Consultation</h3>
+                        <p>Our free initial consultation is an informal discussion with you, the homeowner, to understand your vision and the feasibility of the project.</p>
+                    </article>
+                    <article class="process-step">
+                        <h3>2. Measured Survey</h3>
+                        <p>We conduct a measured survey to produce an accurate representation of your property, including floor plans, elevation, basic sections, and site layout.</p>
+                    </article>
+                    <article class="process-step">
+                        <h3>3. Sketch Designs</h3>
+                        <p>We provide several sketch designs to explore different ways to utilize the space, allowing you to mix and match elements to achieve your desired design.</p>
+                    </article>
+                    <article class="process-step">
+                        <h3>4. Planning Application</h3>
+                        <p>If required, we handle the planning application process, ensuring that your project complies with all necessary regulations.</p>
+                    </article>
+                    <article class="process-step">
+                        <h3>5. Building Regulations</h3>
+                        <p>We prepare a detailed building regulation package to ensure compliance with all necessary building standards, providing detailed plans for construction.</p>
+                    </article>
                 </div>
-                <div class="process-step">
-                    <h3>2. Measured Survey</h3>
-                    <p>If you decide to proceed then the next step is a measured survey. This is a site visit where we can produce an accurate representation of your property. This will usually take up to an hour and during this visit we can discuss your brief in detail. Depending on the scope of the works required the measured survey will usually include the following: floor plans, elevation, basic sections, roof plans, and site layout.</p>
-                </div>
-                <div class="process-step">
-                    <h3>3. Sketch Designs</h3>
-                    <p>We always provide clients with several sketch designs to show the different ways the space can be utilized. We typically produce 3 different options based on the brief and tend to find that our clients like different elements from each. We will discuss the different options at a design meeting and amend the plans accordingly to ensure you are happy with the final design.</p>
-                </div>
-                <div class="process-step">
-                    <h3>4. Planning Application</h3>
-                    <p>Planning consent is required for the majority of residential projects. However, in some instances, a planning application may not be necessary due to Permitted Development Rights. During the initial consultation, we will discuss the need for a planning application. If it is necessary, we will submit an application for a Certificate of Lawfulness which will certify that the proposed development is lawful and within your permitted development rights.</p>
-                </div>
-                <div class="process-step">
-                    <h3>5. Building Regulations</h3>
-                    <p>Once we have obtained the necessary planning consent or certificate of lawfulness, we will prepare the building regulation package. The drawing package is required by the council to ensure that the development is being built in accordance with building regulations. We provide quality and detailed plans which can be used on site for construction. This will include cross sections, foundation details, steel and joist layouts, insulation and drainage sections. These drawings can be used to obtain competitive quotes from builders.</p>
-                </div>
-            </div>
+            </section>
         </section>
     </main>
 
@@ -83,7 +86,7 @@
         <p>&copy; 2024 Domain Expansion LTD. All rights reserved.</p>
     </footer>
 
-    <button id="back-to-top">Top</button>
+    <button id="back-to-top" aria-label="Back to top">Top</button>
 
     <script src="scripts.js"></script>
 </body>
