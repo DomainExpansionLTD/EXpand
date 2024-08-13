@@ -285,3 +285,28 @@ footer {
         width: 100%;
     }
 }
+
+.portfolio-scroll {
+    display: flex;
+    overflow-x: scroll;
+    padding: 1rem 0;
+    gap: 1rem;
+    scroll-snap-type: x mandatory;
+}
+
+.portfolio-item {
+    flex: 0 0 auto;
+    width: 200px; /* Adjust the width as needed */
+    scroll-snap-align: start;
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.portfolio-item img:hover {
+    transform: scale(1.05);
+}
