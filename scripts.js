@@ -3,6 +3,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const nav = document.querySelector('nav ul');
     const backToTopBtn = document.getElementById('back-to-top');
     const sections = document.querySelectorAll('section');
+    const slides = document.querySelectorAll('.carousel-slide');
+    let currentIndex = 0;
 
     // Mobile menu toggle
     mobileMenuBtn.addEventListener('click', () => {
@@ -40,4 +42,20 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { threshold: 0.1 });
 
     sections.forEach(section => observer.observe(section));
+
+    // Hero carousel function
+    function showSlide(index) {
+        slides.forEach((slide, i) => {
+            slide.style.display = i === index ? 'block' : 'none';
+        });
+    }
+
+    function nextSlide() {
+        currentIndex = (currentIndex + 1) % slides.length;
+        showSlide(currentIndex);
+    }
+
+    setInterval(nextSlide, 5000); // Change slide every 5 seconds
+
+    showSlide(currentIndex);
 });
