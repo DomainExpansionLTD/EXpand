@@ -4,6 +4,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const backToTopBtn = document.getElementById('back-to-top');
     const sections = document.querySelectorAll('section');
     const slides = document.querySelectorAll('.carousel-slide');
+    const portfolioItems = document.querySelectorAll('.portfolio-item');
+    const prevBtn = document.querySelector('.carousel-control.prev');
+    const nextBtn = document.querySelector('.carousel-control.next');
     let currentIndex = 0;
     let autoSlideInterval;
 
@@ -46,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     sections.forEach(section => observer.observe(section));
 
-    // Carousel function
+    // Hero Carousel function
     function showSlide(index) {
         slides.forEach((slide, i) => {
             slide.style.display = i === index ? 'block' : 'none';
@@ -75,6 +78,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
     showSlide(currentIndex);
     startCarousel();
+
+    // Portfolio Carousel function
+    function showPortfolioItem(index) {
+        portfolioItems.forEach((item, i) => {
+            item.classList.toggle('active', i === index);
+        });
+    }
+
+    function nextPortfolioItem() {
+        currentIndex = (currentIndex + 1) % portfolioItems.length;
+        showPortfolioItem(currentIndex);
+    }
+
+    function prevPortfolioItem() {
+        currentIndex = (currentIndex - 1 + portfolioItems.length) % portfolioItems.length;
+        showPortfolioItem(currentIndex);
+    }
+
+    nextBtn.addEventListener('click', nextPortfolioItem);
+    prevBtn.addEventListener('click', prevPortfolioItem);
+
+    showPortfolioItem(currentIndex);
 
     // Handle resize event for responsive adjustments
     window.addEventListener('resize', () => {
