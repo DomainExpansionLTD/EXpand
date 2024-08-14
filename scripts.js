@@ -17,37 +17,43 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Smooth scrolling for navigation links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    document.querySelectorAll('nav a').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
-            nav.classList.remove('show');
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
+            const target = document.querySelector(this.getAttribute('href'));
+            target.scrollIntoView({ behavior: 'smooth' });
         });
     });
 
-    // Back to top button visibility toggle
+    // Show back to top button on scroll
     window.addEventListener('scroll', () => {
-        backToTopBtn.style.display = window.scrollY > 200 ? 'block' : 'none';
+        if (window.scrollY > 200) {
+            backToTopBtn.style.display = 'block';
+        } else {
+            backToTopBtn.style.display = 'none';
+        }
     });
 
-    // Back to top smooth scroll
+    // Back to top button click event
     backToTopBtn.addEventListener('click', () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
     });
 
-    // Intersection Observer for scroll animations
-    const observer = new IntersectionObserver((entries, observer) => {
+    // Fade in sections on scroll
+    const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
-                observer.unobserve(entry.target);
             }
         });
-    }, { threshold: 0.1 });
+    });
 
-    sections.forEach(section => observer.observe(section));
+    sections.forEach(section => {
+        observer.observe(section);
+    });
 
     // Hero Image Carousel with Fade In/Out Effect
     function showHeroImage(index) {
@@ -89,12 +95,4 @@ document.addEventListener('DOMContentLoaded', () => {
     prevBtn.addEventListener('click', prevPortfolioItem);
 
     showPortfolioItem(currentPortfolioIndex);
-
-    // Handle resize event for responsive adjustments
-    window.addEventListener('resize', () => {
-        if (window.innerWidth < 768) {
-            nav.classList.remove('show');
-            mobileMenuBtn.setAttribute('aria-expanded', false);
-        }
-    });
 });
