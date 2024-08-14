@@ -3,7 +3,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const nav = document.querySelector('nav ul');
     const backToTopBtn = document.getElementById('back-to-top');
     const sections = document.querySelectorAll('section');
-    const slides = document.querySelectorAll('.carousel-slide');
     const portfolioItems = document.querySelectorAll('.portfolio-item');
     const prevBtn = document.querySelector('.carousel-control.prev');
     const nextBtn = document.querySelector('.carousel-control.next');
@@ -48,36 +47,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { threshold: 0.1 });
 
     sections.forEach(section => observer.observe(section));
-
-    // Hero Carousel function
-    function showSlide(index) {
-        slides.forEach((slide, i) => {
-            slide.style.display = i === index ? 'block' : 'none';
-            slide.setAttribute('aria-hidden', i !== index);
-        });
-    }
-
-    function nextSlide() {
-        currentIndex = (currentIndex + 1) % slides.length;
-        showSlide(currentIndex);
-    }
-
-    // Initialize carousel auto-slide
-    function startCarousel() {
-        autoSlideInterval = setInterval(nextSlide, 5000);
-    }
-
-    function stopCarousel() {
-        clearInterval(autoSlideInterval);
-    }
-
-    slides.forEach(slide => {
-        slide.addEventListener('mouseenter', stopCarousel);
-        slide.addEventListener('mouseleave', startCarousel);
-    });
-
-    showSlide(currentIndex);
-    startCarousel();
 
     // Portfolio Carousel function
     function showPortfolioItem(index) {
