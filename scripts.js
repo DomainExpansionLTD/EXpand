@@ -3,10 +3,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const nav = document.querySelector('nav ul');
     const backToTopBtn = document.getElementById('back-to-top');
     const sections = document.querySelectorAll('section');
+    const heroImages = document.querySelectorAll('.carousel-slide img');
     const portfolioItems = document.querySelectorAll('.portfolio-item');
     const prevBtn = document.querySelector('.carousel-control.prev');
     const nextBtn = document.querySelector('.carousel-control.next');
-    let currentIndex = 0;
+    let currentHeroIndex = 0;
+    let currentPortfolioIndex = 0;
 
     // Mobile menu toggle
     mobileMenuBtn.addEventListener('click', () => {
@@ -47,6 +49,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
     sections.forEach(section => observer.observe(section));
 
+    // Hero Image Carousel with Fade In/Out Effect
+    function showHeroImage(index) {
+        heroImages.forEach((img, i) => {
+            img.classList.remove('active');
+            if (i === index) {
+                img.classList.add('active');
+            }
+        });
+    }
+
+    function nextHeroImage() {
+        currentHeroIndex = (currentHeroIndex + 1) % heroImages.length;
+        showHeroImage(currentHeroIndex);
+    }
+
+    setInterval(nextHeroImage, 8000); // Change image every 8 seconds
+
+    showHeroImage(currentHeroIndex);
+
     // Portfolio Carousel function
     function showPortfolioItem(index) {
         portfolioItems.forEach((item, i) => {
@@ -55,19 +76,19 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function nextPortfolioItem() {
-        currentIndex = (currentIndex + 1) % portfolioItems.length;
-        showPortfolioItem(currentIndex);
+        currentPortfolioIndex = (currentPortfolioIndex + 1) % portfolioItems.length;
+        showPortfolioItem(currentPortfolioIndex);
     }
 
     function prevPortfolioItem() {
-        currentIndex = (currentIndex - 1 + portfolioItems.length) % portfolioItems.length;
-        showPortfolioItem(currentIndex);
+        currentPortfolioIndex = (currentPortfolioIndex - 1 + portfolioItems.length) % portfolioItems.length;
+        showPortfolioItem(currentPortfolioIndex);
     }
 
     nextBtn.addEventListener('click', nextPortfolioItem);
     prevBtn.addEventListener('click', prevPortfolioItem);
 
-    showPortfolioItem(currentIndex);
+    showPortfolioItem(currentPortfolioIndex);
 
     // Handle resize event for responsive adjustments
     window.addEventListener('resize', () => {

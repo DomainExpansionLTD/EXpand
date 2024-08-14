@@ -81,18 +81,29 @@ nav ul li a:hover {
     width: 100%;
     height: 100%;
     overflow: hidden;
+    position: relative;
 }
 
 .carousel-slide img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    animation: fadeIn 2s ease-in-out;
+    animation: fadeInOut 8s infinite;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+.carousel-slide img.active {
+    opacity: 1;
+}
+
+@keyframes fadeInOut {
+    0% { opacity: 0; }
+    20% { opacity: 1; }
+    80% { opacity: 1; }
+    100% { opacity: 0; }
 }
 
 .hero-overlay {
@@ -159,8 +170,8 @@ section.visible {
 .portfolio-carousel {
     position: relative;
     width: 100%;
-    max-width: 600px; /* Ensuring the carousel doesn't overwhelm the screen */
-    height: 400px; /* Properly sized to fit most screens */
+    max-width: 600px;
+    height: 400px;
     overflow: hidden;
     margin: 0 auto;
 }
@@ -174,6 +185,12 @@ section.visible {
 
 .portfolio-item.active {
     display: block;
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Ensures the images are fully visible within the frame */
 }
 
 .carousel-control {
@@ -194,102 +211,6 @@ section.visible {
 
 .carousel-control.next {
     right: 10px;
-}
-
-.services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
-}
-
-.service-item {
-    background-color: white;
-    padding: 1.5rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
-    text-align: center;
-}
-
-.service-item img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-    margin-bottom: 1rem;
-}
-
-.service-item h3 {
-    margin-bottom: 1rem;
-}
-
-.service-item:hover {
-    transform: translateY(-5px);
-}
-
-.contact form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-    max-width: 500px;
-    margin: 0 auto;
-}
-
-.contact input, .contact textarea {
-    width: 100%;
-    padding: 0.5rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-.contact button {
-    background-color: var(--primary-color);
-    color: white;
-    border: none;
-    padding: 0.75rem;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.contact button:hover {
-    background-color: var(--secondary-color);
-}
-
-footer {
-    background-color: var(--primary-color);
-    color: white;
-    text-align: center;
-    padding: 2rem 0;
-    margin-top: 4rem;
-}
-
-.social-links {
-    margin-bottom: 1rem;
-}
-
-.social-links a {
-    color: white;
-    font-size: 1.5rem;
-    margin: 0 10px;
-    text-decoration: none;
-}
-
-#back-to-top {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: var(--primary-color);
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-    display: none;
-}
-
-#back-to-top:hover {
-    background-color: var(--secondary-color);
 }
 
 @media (max-width: 768px) {
@@ -322,16 +243,12 @@ footer {
     }
 
     .portfolio-carousel {
-        max-width: 100%; /* Make it responsive for mobile */
-        height: 300px; /* Adjust height for smaller screens */
+        max-width: 100%;
+        height: 300px;
     }
 
     .carousel-control {
         font-size: 1.5rem;
         padding: 5px;
-    }
-
-    .service-item {
-        padding: 1rem;
     }
 }
