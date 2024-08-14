@@ -7,7 +7,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const prevBtn = document.querySelector('.carousel-control.prev');
     const nextBtn = document.querySelector('.carousel-control.next');
     let currentIndex = 0;
-    let autoSlideInterval;
 
     // Mobile menu toggle
     mobileMenuBtn.addEventListener('click', () => {
