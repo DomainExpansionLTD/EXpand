@@ -10,9 +10,9 @@
 <body>
     <header>
         <div class="logo">Domain Expansion LTD</div>
-        <button class="mobile-menu-btn">☰</button>
+        <button class="mobile-menu-btn" aria-label="Open menu">☰</button>
         <nav>
-            <ul>
+            <ul id="main-nav">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="services.html">Services</a></li>
@@ -27,7 +27,7 @@
     <main>
         <section class="portfolio">
             <h2>Our Portfolio</h2>
-            <div class="portfolio-carousel">
+            <div class="portfolio-scroll">
                 <div class="portfolio-item">
                     <img src="https://github.com/DomainExpansionLTD/EXpand/blob/main/Pages%20from%20portfolio%2023-2.jpg?raw=true" alt="Portfolio 23-2">
                 </div>
@@ -63,8 +63,8 @@
         <p>&copy; 2024 Domain Expansion LTD. All rights reserved.</p>
     </footer>
 
-    <button id="back-to-top">Top</button>
+    <button id="back-to-top" aria-label="Back to top">Top</button>
 
-    <script src="scripts.js"></script>
+    <script src="scripts.js" defer></script>
 </body>
 </html>

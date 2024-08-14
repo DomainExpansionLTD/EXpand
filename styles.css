@@ -153,35 +153,30 @@ section.visible {
     transform: translateY(0);
 }
 
-.services-grid, .portfolio-grid {
+.portfolio-scroll {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 2rem;
-    margin-top: 2rem;
-    padding: 0 1rem;
+    overflow-x: scroll;
+    padding: 1rem 0;
+    gap: 1rem;
+    scroll-snap-type: x mandatory;
 }
 
-.service-item, .portfolio-item {
-    background-color: white;
-    padding: 1.5rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    flex: 1 1 300px;
-    max-width: 300px;
+.portfolio-item {
+    flex: 0 0 auto;
+    width: 200px; /* Adjust the width as needed */
+    scroll-snap-align: start;
     transition: transform 0.3s ease;
-}
-
-.service-item:hover, .portfolio-item:hover {
-    transform: translateY(-5px);
 }
 
 .portfolio-item img {
     width: 100%;
-    height: 200px;
-    object-fit: cover;
+    height: auto;
     border-radius: 8px;
-    margin-bottom: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.portfolio-item:hover img {
+    transform: scale(1.1);
 }
 
 .contact form {
@@ -281,5 +276,8 @@ footer {
     }
     .hero-overlay {
         width: 100%;
+    }
+    .portfolio-item {
+        width: 150px; /* Adjust for smaller screens */
     }
 }
