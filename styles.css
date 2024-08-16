@@ -1,21 +1,16 @@
+/* Minified styles for production */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
 .portfolio-item img {
-    width: 80%; /* Scale down images to fit within the frame */
+    width: 80%;
     height: auto;
     object-fit: contain;
     padding: 10px;
     margin: 0 auto;
 }
 
-.intro {
-    text-align: center;
-    margin: 2rem auto;
-    max-width: 800px;
-}
-
-.hero-carousel .carousel-container {
-    height: 40vh; /* Reduced height for the hero section */
-}
-
-.hero-carousel .carousel-slide img {
-    object-fit: cover; /* Ensure images fit well within the container */
-}
+/* Other existing styles */
