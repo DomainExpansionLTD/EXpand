@@ -1,0 +1,90 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Domain Expansion LTD</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<style>
+body {
+    background-color: #f9f9f9;
+    color: #333;
+    font-family: 'Montserrat', sans-serif;
+}
+
+header, footer {
+    background-color: #2E8B57;
+    color: #FFFFFF;
+    padding: 20px;
+}
+
+a {
+    color: #2E8B57;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+
+}
+
+header, footer {
+    background-color: #2E8B57;
+    color: #FFFFFF;
+    padding: 20px;
+}
+
+header .logo, footer .logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 15px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.hero {
+    position: relative;
+    height: 500px;
+    background: url('path-to-your-motion-image.jpg') no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+button {
+    background-color: #2E8B57;
+    color: #FFFFFF;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #216644;
+}
+
+footer {
+    text-align: center;
+    font-size: 0.9rem;
+    margin-top: 40px;
+}
